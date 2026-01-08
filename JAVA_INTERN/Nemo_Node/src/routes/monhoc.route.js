@@ -5,4 +5,6 @@ router.get('/monhoc', controller.getAll)
 router.post('/monhoc', controller.create)
 router.get('/monhoc/:maMon', controller.getById)
 router.delete('/monhoc/:maMon', controller.delete)
+router.put('/monhoc/:maMon', controller.update)
+router.get('/monhoc-count', controller.count)
 module.exports = router

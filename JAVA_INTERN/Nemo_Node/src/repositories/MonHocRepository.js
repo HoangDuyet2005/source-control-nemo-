@@ -14,5 +14,8 @@ class MonHocRepository {
   async update(maMon, monHoc){
     throw new Error('Chưa implemented')
   }
+  async count(){
+    throw new Error('Chưa implemented')
+  }
 }
 module.exports = MonHocRepository

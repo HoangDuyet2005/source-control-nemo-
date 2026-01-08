@@ -1,15 +1,17 @@
-const mysql = require('mysql2/promise')
-require('dotenv').config()
+const mysql = require('mysql2/promise');
+const config = require('./config'); // Import file config vừa tạo
+
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: process.env.DB_PASSWORD,
-  database: 'nemodb'
-})
-module.exports = pool
-pool.query('SELECT *from mon_hoc').then(() => {
-  console.log('Kết nối được.')
-})
-.catch((err) => {
-  console.error('Dell kết nối được với db:', err)
-})
+  host: config.db.host,
+  user: config.db.user,
+  password: config.db.password,
+  database: config.db.database
+});
+//test connect
+pool.query('SELECT 1').then(() => {
+  console.log('Kết nối Database thành công qua Config.');
+}).catch((err) => {
+  console.error('Lỗi kết nối db:', err);
+});
+
+module.exports = pool;

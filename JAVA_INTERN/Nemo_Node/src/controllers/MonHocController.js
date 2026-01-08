@@ -28,5 +28,9 @@ class MonHocController {
     await repo.update(maMon, req.body)
     res.status(200).json({ message: 'Đã cập nhật' })
   }
+  async count(req, res) {
+    const count =  await repo.count()
+    res.status(200).json({ count })
+  }
 }
 module.exports = new MonHocController()
