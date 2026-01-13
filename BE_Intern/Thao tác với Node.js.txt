@@ -1,0 +1,28 @@
+Thao tác với Node.js
+B1: Tải Node.js https://nodejs.org/en/download
+B2: Cập nhật npm bằng "npm install -g npm"
+B3: Khởi tạo dự án cần "npm init"
+    +) Đây phải là bước đầu tiên trong code. Nó tạo ra file package.json (chứa thông tin dự án)
+    +) Mẹo: Dùng "npm init -y"để bỏ qua các câu hỏi thiết lập nhanh
+B4: Cài Framework Express
+    +) Chạy lệnh: npm install express
+    +) Express là framework backend cho Node.js
+    +) Sau khi cài, Node.js sẽ tự động thêm Express vào dependencies trong file package.json
+B5: Không push node_modules hay .env lên git vì vậy sẽ tạo gitignore (.gitignore là "danh sách từ chối", Git sẽ coi như file đó tàng hình)
+    +) Tạo thủ công hoặc trên cmd "type nul > .gitignore", trên pshell "ni .gitignore"
+    +) Ngăn push node_modules hoặc .env lên GitHub (node_modules/, .env)
+=============================================================================================
+Ngoài Express, một dự án Backend thực thụ thường đi kèm bộ 3 này:
+1. express: Framework chính.
+2. dotenv: Để quản lý các biến môi trường (như Port, mật khẩu Database) bảo mật hơn.
+3. nodemon (Cài ở devDependencies): Giúp server tự động restart khi bạn sửa code.
+*Lệnh chuẩn:
+   +) npm i express dotenv
+   +) npm i -D nodemon (Tham số -D để đưa vào mục devDependencies)
+-------------------------------------------------------------------------------------------------
+Bonus 
+Thay vì tải trực tiếp từ web, dân chuyên nghiệp thường dùng NVM (Node Version Manager).
+Tại sao? Vì sau này bạn sẽ làm nhiều dự án, dự án cũ chạy Node 14, dự án mới chạy Node 20. NVM giúp bạn đổi phiên bản chỉ trong 1 giây.
+1. NVM (Node Version Manager) là công cụ giúp bạn cài đặt, quản lý và chuyển đổi giữa nhiều phiên bản Node.js khác nhau trên cùng một máy tính.
+2. Nếu bạn cài Node.js bằng cách tải bộ cài .msi (Windows) hay .pkg (Mac) truyền thống, bạn sẽ bị "chết cứng" ở một phiên bản. Với NVM, bạn có thể nhảy từ Node 14 sang Node 20 chỉ bằng một dòng lệnh.
+prowwith tự động prisma
